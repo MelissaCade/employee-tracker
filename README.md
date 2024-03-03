@@ -39,3 +39,5 @@ free code camp - https://www.freecodecamp.org/
 geeks for geeks - https://www.geeksforgeeks.org/  
 mdn web docs - https://developer.mozilla.org/en-US/  
 w3schools - https://www.w3schools.com/
+
+I also had the help of my classmate, Tyler Meyers.
