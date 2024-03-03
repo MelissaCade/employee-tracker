@@ -12,21 +12,19 @@ const collectEmployees = function () {
     if (isNaN(employeeSalary)) {
       employeeSalary = 0;
     } else {
-      employeeSalary;
+      Number(employeeSalary);
     }
-    const formatting_options = {
+    console.log(typeof Number(employeeSalary));
+    let formattedSalary = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
-    };
-    const formattedSalary = employeeSalary.toLocaleString(
-      "en-US",
-      formatting_options
-    );
+    });
     let newEmployee = [
       {
         lastName: `${employeeLastName}`,
         firstName: `${employeeFirstName}`,
-        salary: `${formattedSalary}`,
+        salary: `${formattedSalary.format(employeeSalary)}`,
+        salaryRaw: `${employeeSalary}`,
       },
     ];
     employeesArray = employeesArray.concat(newEmployee);
@@ -36,13 +34,37 @@ const collectEmployees = function () {
 };
 
 // Display the average salary
+let salaryArray = [];
+let sum = 0;
 const displayAverageSalary = function (employeesArray) {
-  // TODO: Calculate and display the average salary
+  for (let i = 0; i < employeesArray.length; i++) {
+    salaryArray = salaryArray.concat(employeesArray[i].salaryRaw);
+  }
+  const calcAve = function () {
+    for (let i = 0; i < salaryArray.length; i++) {
+      sum = sum + Number(salaryArray[i]);
+    }
+  };
+  let formattedSalary = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+  calcAve();
+  const average = sum / salaryArray.length;
+  console.log(
+    `The average employee salary between our ${
+      salaryArray.length
+    } employee(s) is ${formattedSalary.format(average)}.`
+  );
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
-  // TODO: Select and display a random employee
+  let randomEmployee =
+    employeesArray[Math.floor(Math.random() * employeesArray.length)];
+  console.log(
+    `Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`
+  );
 };
 
 /*
