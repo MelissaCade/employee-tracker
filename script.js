@@ -14,7 +14,6 @@ const collectEmployees = function () {
     } else {
       Number(employeeSalary);
     }
-    console.log(typeof Number(employeeSalary));
     let formattedSalary = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",
