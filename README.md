@@ -34,7 +34,7 @@ The console will tell the user the average salary of all employees, and pick one
 
 This page uses the materials provided in the University of Denver Coding Bootcamp. I also used the following websites as reference to figure out how to do everything:
 
-stack overflow - https://stackoverflow.com/
+stack overflow - https://stackoverflow.com/  
 free code camp - https://www.freecodecamp.org/  
 geeks for geeks - https://www.geeksforgeeks.org/  
 mdn web docs - https://developer.mozilla.org/en-US/  
